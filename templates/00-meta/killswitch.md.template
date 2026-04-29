@@ -1,0 +1,47 @@
+# Killswitch
+
+> **Status:** ACTIVE
+>
+> **Last updated:** YYYY-MM-DD HH:MM (TZ)
+>
+> **Last halt reason:** —
+
+---
+
+## What this file is
+
+Every agent in the stack reads this file as the first step of every non-trivial action. If `Status` above is set to `HALT`, the agent must stop immediately, log the halt, and exit cleanly without performing further writes, API calls, or side effects.
+
+This is the operator's last-line brake. It is reachable without authentication, without admin consoles, and without remembering which credentials belong to which agent. One file, one edit, one git commit — and every agent in the stack stops at its next read.
+
+## How to invoke a halt
+
+1. Open this file.
+2. Change `Status: ACTIVE` to `Status: HALT`.
+3. Update `Last updated` to the current timestamp.
+4. Set `Last halt reason` to a one-line description of why you are halting (the *why* matters for incident-log reconstruction later).
+5. Commit the change to git.
+
+The agents will pick up the halt on their next read of this file. If an agent is mid-operation when the halt is committed, it will complete the in-flight step and exit before starting the next step — there is no kill-the-process-mid-write semantic here, because that would create exactly the kind of half-written state the framework is trying to avoid.
+
+## How to recover
+
+1. Investigate the cause of the halt. Read the relevant agent logs, the vault state at halt time, and any external systems that may have been affected.
+2. Fix the underlying issue — code change, configuration change, credential rotation, whatever the investigation surfaces.
+3. Update this file: change `Status: HALT` back to `Status: ACTIVE`, update `Last updated`, and set `Last halt reason` to a one-line description of what was found and fixed (preserve the prior reason in a recovery note below if useful).
+4. Commit the change.
+5. Re-enable any agents that were paused at the halt; they will read the now-ACTIVE killswitch on their next invocation and resume.
+
+## Convention notes for adopters
+
+- **Do not delete this file** even when no halts have occurred. Agents are configured to fail-closed: if the killswitch file is missing, the agent halts as if it found a HALT directive. The convention is that the file always exists.
+- **Do not edit `Last halt reason` to clear the history** when going from HALT back to ACTIVE. The git history is the audit trail; if you want a clean current-state representation, use a separate "halt log" file in `00-meta/` to capture incident details, and keep `Last halt reason` as just the most recent.
+- **Never let the killswitch live somewhere agents would not read it.** The path `00-meta/killswitch.md` is the convention; if you change the path, every agent's configuration changes too.
+
+## Recovery / incident notes
+
+(Append entries below the line, most recent first. Do not edit prior entries.)
+
+---
+
+<!-- 2026-MM-DD: short note on a halt and recovery, if any -->
