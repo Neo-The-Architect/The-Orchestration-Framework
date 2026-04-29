@@ -2,8 +2,7 @@
 
 > **Status:** v0.1 — public release. Methodology stable. Templates evolving.
 
-<!-- TODO(philosophy commit): Replace this paragraph with the source-anchored "what this is" statement once the philosophy section lands. -->
-The Orchestration Framework is a working methodology for operators who run their lives and businesses through a coordinated set of AI agents. It defines a vault architecture for state, a stack of agent roles with explicit responsibilities, daily and weekly rhythms that keep the system honest, and a small set of trigger words and failure modes that surface when the discipline slips. It is shared publicly so that other operators can read it, adapt it to their own context, and instantiate it in their own private vaults.
+The Orchestration Framework is a philosophy of how a single human operator commands an agentic stack of AI tools through a structured file architecture. It is not a productivity system, a note-taking method, or a workflow guide — it is a working constitution for operators who treat AI agents as conductors, executors, and observers operating against a persistent, version-controlled, file-based knowledge layer that represents the operator's life, business, and infrastructure as a single unified system. The operator does not perform the work; the operator orchestrates the system that performs the work. Files are the medium, agents are the labor, velocity is the outcome.
 
 This is methodology and reference, not a starter kit. The Template Repository feature is intentionally disabled. You read the philosophy, you copy the template skeletons into your own private vault on your own machine, and you make the framework yours.
 
