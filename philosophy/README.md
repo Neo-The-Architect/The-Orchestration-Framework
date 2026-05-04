@@ -1,6 +1,6 @@
 # Philosophy
 
-The Orchestration Framework rests on six philosophical foundations. The vault structure, the agent stack, the rhythms, the triggers, and the failure-mode countermeasures are all consequences of these six. If you skip the philosophy and adopt the architecture cold, the architecture will read as arbitrary rules and you will discard the parts that look inconvenient — which are usually the parts doing the actual work.
+The Orchestration Framework rests on seven philosophical foundations. The vault structure, the agent stack, the rhythms, the triggers, and the failure-mode countermeasures are all consequences of these six. If you skip the philosophy and adopt the architecture cold, the architecture will read as arbitrary rules and you will discard the parts that look inconvenient — which are usually the parts doing the actual work.
 
 Read these in order. Each one is short. The cross-links at the bottom of each page show how the principles compose.
 
@@ -12,3 +12,4 @@ Read these in order. Each one is short. The cross-links at the bottom of each pa
 | 4 | [Token Efficiency Is Discipline](04-token-efficiency.md) | Lean output is an engineering constraint, not a stylistic preference. |
 | 5 | [Decisions Are First-Class Objects](05-decisions-as-artifacts.md) | Capture reasoning, not just facts. Future-self stops re-litigating solved problems. |
 | 6 | [The Killswitch Is Sacred](06-killswitch.md) | The orchestrator must always be able to stop the orchestra. |
+| 7 | [The Fundamentals Discipline](07-fundamentals-discipline.md) | Foundational engineering knowledge is what separates durable AI-native operation from trend-chase. |

@@ -9,5 +9,8 @@ This section captures the canonical architecture. Adopters preserve the director
 | [`vault-structure.md`](vault-structure.md) | The ten numbered directories, their purposes, and what does and does not belong in each |
 | [`naming-conventions.md`](naming-conventions.md) | File and directory naming rules — prefixes, casing, date formats, template handling |
 | [`permissions-table.md`](permissions-table.md) | Read / write permissions across the operator and the agent stack, with the three constrained protocols (propose-only, append-only, R/W) explained |
+| [`security-layer-for-foreign-code.md`](security-layer-for-foreign-code.md) | The verification gate every external repo, MCP, skill, or connector passes through before entering the substrate |
+| [`knowledge-architecture-as-compounding-infrastructure.md`](knowledge-architecture-as-compounding-infrastructure.md) | Why the vault is a compounding asset, not storage — the mechanism by which operator learning compounds across engagements |
+| [`anonymization-protocol-for-public-artifacts.md`](anonymization-protocol-for-public-artifacts.md) | Locked verification language and corrective procedures that keep the operator's private exclusion list out of public-facing content |
 
 Customization is permitted at the leaves (project subfolders, journal sub-organization, content-pillar names) but not at the trunk (the ten numbered directories, their prefixes, their permissions). Operators who change the trunk are building a different framework, and that is fine — but it is no longer this one, and the cross-links and conventions in the rest of this repo will not apply cleanly.
